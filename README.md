@@ -81,3 +81,21 @@ Sigue estos pasos para montar el entorno de desarrollo local:
 ```bash
 git clone URL_DEL_REPOSITORIO
 cd minitienda
+# 2. Instalar dependencias de PHP
+composer install
+
+# 3. Configurar el entorno
+cp .env.example .env
+
+# Nota: Recuerda abrir el archivo .env y configurar tus credenciales de base de datos
+# (DB_DATABASE, DB_USERNAME, DB_PASSWORD) antes de continuar con el paso 4.
+
+# 4. Preparar la aplicación
+php artisan key_generate
+php artisan migrate --seed
+
+# 5. Configurar almacenamiento externo
+php artisan storage:link
+
+# 6. Iniciar el servidor
+php artisan serve
