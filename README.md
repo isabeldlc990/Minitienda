@@ -1,112 +1,83 @@
-# Minitienda
-MiniTienda es una aplicación web desarrollada en Laravel que permite gestionar productos, inventario, ventas y usuarios mediante roles de acceso.  El sistema está diseñado para facilitar la administración de una tienda, permitiendo controlar el stock de productos, registrar ventas y realizar compras mediante un carrito de compras.
-Objetivos
-Gestionar productos y categorías.
-Controlar el inventario disponible.
-Registrar ventas realizadas.
-Permitir compras mediante carrito de compras.
-Gestionar usuarios y roles del sistema.
-Tecnologías Utilizadas
-Laravel 12
-PHP 8.x
-MySQL
-Blade Templates
-Tailwind CSS
-Laravel Breeze
-Spatie Laravel Permission
-Roles del Sistema
-Administrador
+# 🛒 MiniTienda
 
-Puede:
+¡Bienvenido a **MiniTienda**! Una aplicación web robusta y moderna desarrollada en Laravel para la gestión integral de productos, inventario, ventas y usuarios mediante un sistema de control de acceso basado en roles (RBAC). 
 
-Gestionar usuarios.
-Asignar roles.
-Gestionar productos.
-Gestionar categorías.
-Gestionar inventario.
-Gestionar ventas.
-Gestor de Inventario
+El sistema está diseñado para optimizar la administración de un negocio, permitiendo un control preciso del stock, registro de ventas en tiempo real y una experiencia de compra fluida para el cliente a través de un carrito de compras.
 
-Puede:
+---
 
-Crear productos.
-Editar productos.
-Eliminar productos.
-Gestionar categorías.
-Controlar existencias.
-Cliente
+## 🎯 Objetivos del Proyecto
 
-Puede:
+* **Administración Centralizada:** Gestionar productos y categorías de forma dinámica.
+* **Control de Stock:** Mantener un monitoreo constante del inventario disponible.
+* **Flujo de Ventas:** Registrar transacciones de manera eficiente y automatizada.
+* **Experiencia de Usuario:** Ofrecer un carrito de compras intuitivo para los clientes.
+* **Seguridad:** Garantizar el acceso protegido mediante roles y permisos específicos.
 
-Registrarse.
-Iniciar sesión.
-Visualizar productos.
-Agregar productos al carrito.
-Realizar compras.
-Consultar historial de pedidos.
+---
 
-Módulos Implementados
-Módulo de Usuarios
-Crear usuarios.
-Editar usuarios.
-Eliminar usuarios.
-Asignar roles.
+## 🛠️ Tecnologías Utilizadas
 
-Módulo de Inventario
-Gestión de productos.
-Gestión de categorías.
-Control de stock.
+El proyecto está construido con las tecnologías más modernas del ecosistema PHP y desarrollo web:
 
-Módulo de Ventas
-Carrito de compras.
-Registro de ventas.
-Descuento automático de inventario.
+* **Framework:** ![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white) v12
+* **Lenguaje:** ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white) v8.x
+* **Base de Datos:** ![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
+* **Frontend:** ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) + Blade Templates
+* **Autenticación:** Laravel Breeze
+* **Permisos:** Spatie Laravel Permission
 
-Módulo de Clientes
-Historial de compras.
-Seguimiento de pedidos.
+---
 
-Base de Datos
+## 👥 Roles del Sistema
 
-Principales tablas:
+El sistema cuenta con tres niveles de acceso claramente definidos:
 
-users
-roles
-permissions
-products
-categories
-sales
-sale_details
+| Rol | Descripción y Permisos |
+| :--- | :--- |
+| **👑 Administrador** | Acceso total al sistema. Puede gestionar usuarios, asignar roles, administrar productos, categorías, inventario y visualizar el historial de ventas globales. |
+| **📦 Gestor de Inventario** | Enfocado en la logística. Puede crear, editar y eliminar productos, gestionar categorías y controlar las existencias en stock. |
+| **🛒 Cliente** | Usuario final. Puede registrarse, iniciar sesión, explorar el catálogo de productos, añadir elementos al carrito, realizar compras y consultar su historial de pedidos. |
 
-Instalación del Proyecto
-Clonar el repositorio
+---
+
+## 🧩 Módulos Implementados
+
+### 🔑 Módulo de Usuarios
+* Operaciones CRUD (Crear, Leer, Actualizar, Eliminar) de usuarios.
+* Asignación y modificación de roles en tiempo real.
+
+### 📦 Módulo de Inventario
+* Catálogo maestro de productos y categorías.
+* Control estricto de existencias (mínimos y máximos).
+
+### 💰 Módulo de Ventas
+* Carrito de compras interactivo para el cliente.
+* Pasarela de registro de ventas.
+* **Descuento automático del inventario** al confirmar una compra.
+
+### 🛍️ Módulo de Clientes
+* Panel privado para el cliente.
+* Historial detallado de compras y seguimiento del estado de pedidos.
+
+---
+
+## 🗄️ Estructura de la Base de Datos
+
+Las principales tablas que componen la arquitectura del sistema son:
+
+* `users`: Almacena la información de las cuentas de usuario.
+* `roles` & `permissions`: Tablas del paquete Spatie para el control de acceso.
+* `products` & `categories`: Estructura para el catálogo de artículos.
+* `sales` & `sale_details`: Registro histórico de las transacciones y los productos asociados a cada venta.
+
+---
+
+## 🚀 Instalación y Configuración
+
+Sigue estos pasos para montar el entorno de desarrollo local:
+
+### 1. Clonar el repositorio
+```bash
 git clone URL_DEL_REPOSITORIO
-Instalar dependencias
-composer install
-
-Configurar archivo .env
-cp .env.example .env
-
-Configurar:
-
-Base de datos
-Usuario MySQL
-Contraseña
-Generar clave
-php artisan key:generate
-Ejecutar migraciones
-php artisan migrate
-Ejecutar seeders
-php artisan db:seed
-Crear enlace simbólico
-php artisan storage:link
-Ejecutar el servidor
-php artisan serve
-Funcionalidades Principales
-Autenticación de usuarios.
-Control de acceso por roles.
-Gestión de inventario.
-Gestión de ventas.
-Carrito de compras.
-Historial de compras.
-Administración de usuarios.
+cd minitienda
